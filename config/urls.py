@@ -17,7 +17,13 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from cinemalog.views import WathListView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", WathListView.as_view(), name="index"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

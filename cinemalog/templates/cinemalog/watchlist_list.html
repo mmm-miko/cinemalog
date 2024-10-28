@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>鑑賞記録</title>
+</head>
+<body>
+
+<h1>リスト</h1>
+
+{% for movie in watchlist_list  %}
+    <img src="{{ movie.image.url }}" alt="{{ movie.image }}">
+{% endfor %}
+
+
+</body>
+</html>
