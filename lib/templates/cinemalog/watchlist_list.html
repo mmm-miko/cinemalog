@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>cinemalog</title>
+</head>
+<body>
+
+{% extends 'base.html' %}
+
+<body>
+{% block content %}
+    <h1>鑑賞記録一覧</h1>
+    <ul>
+        {% for item in watchlist_list %}
+            <li>
+                {% if item.image %}
+                <a href="{% url 'watchlist_detail' item.id %}">
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}" width="150">
+                </a>
+                {% else %}
+                    <p>No Image</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
+</body>
+</html>

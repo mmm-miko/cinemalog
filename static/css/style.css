@@ -1,0 +1,43 @@
+nav {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px; 
+    background-color: #f1f1f1; 
+}
+
+.logo {
+    font-size: 15px; 
+}
+
+
+nav h1 {
+    margin: 0; 
+}
+
+footer {
+    display: flex;                
+    justify-content: center;      
+    align-items: center;          
+    position: fixed;              
+    left: 0;                     
+    bottom: 0;                   
+    width: 100%;                 
+    background-color: #f1f1f1;  
+    padding: 10px;             
+    text-align: center;
+    font-size: 12px;          
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    padding: 10px;
+}
+
+body {
+    margin-bottom: 80px;
+}

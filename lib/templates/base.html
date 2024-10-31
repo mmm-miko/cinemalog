@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>cinemalog</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% block header %}
+    <header>
+        <nav>
+            <div class="logo">cinemalog</div>
+            {% if user.is_authenticated %}
+                <p><a href="/watchlist/create" class="create">post</a></p>
+                <form method="POST" action="/logout/">
+                    {% csrf_token %}
+                    <button type="submit">logout</button>
+                </form>
+            {% else %}
+                <a href="/login" class="login-btn">login</a>
+            {% endif %}
+        </nav>
+    </header>
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% block footer %}
+    <footer>
+        <p>@2024 cinemalog All Rights Reserved.</p>
+    </footer>
+{% endblock %}
+
+</body>
+</html>
